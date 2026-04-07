@@ -16,7 +16,34 @@ export const metadata: Metadata = {
   title: "ShoutBase - Collect & Display Testimonials That Convert",
   description:
     "The easiest way to collect, manage, and showcase customer testimonials. Embed beautiful widgets on your website in minutes. Free to start.",
-  keywords: ["testimonials", "social proof", "reviews", "customer feedback", "embed widget"],
+  keywords: [
+    "testimonials",
+    "social proof",
+    "reviews",
+    "customer feedback",
+    "embed widget",
+    "collect testimonials",
+    "testimonial widget",
+    "review collection tool",
+  ],
+  openGraph: {
+    title: "ShoutBase - Collect & Display Testimonials That Convert",
+    description:
+      "Stop losing sales because of missing social proof. Collect, manage, and embed customer testimonials in minutes.",
+    url: "https://shoutbase.vercel.app",
+    siteName: "ShoutBase",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ShoutBase - Collect Testimonials That Convert",
+    description:
+      "The easiest way to collect and display customer testimonials. Free to start, $49 lifetime deal.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
