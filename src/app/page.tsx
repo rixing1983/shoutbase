@@ -33,6 +33,9 @@ function Navbar() {
           <a href="#how-it-works" className="hover:text-violet-600 transition">
             How It Works
           </a>
+          <Link href="/blog" className="hover:text-violet-600 transition">
+            Blog
+          </Link>
         </div>
         <div className="flex items-center gap-3">
           <Link
