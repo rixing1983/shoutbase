@@ -98,6 +98,41 @@ export default function RootLayout({
             }),
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: [
+                {
+                  "@type": "Question",
+                  name: "How does ShoutBase's free plan work?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "You get 1 collection page and up to 5 testimonials completely free, forever. No credit card required.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "What does ShoutBase lifetime deal mean?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Pay $49 once and use ShoutBase Pro forever. No monthly fees, no annual renewals. All future updates included.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "How do I embed testimonials on my website?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Copy one line of HTML code from your dashboard and paste it into your website. Works with WordPress, Shopify, Webflow, Wix, and any custom site.",
+                  },
+                },
+              ],
+            }),
+          }}
+        />
       </body>
     </html>
   );

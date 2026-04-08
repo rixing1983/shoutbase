@@ -438,6 +438,153 @@ function Pricing() {
   );
 }
 
+function Comparison() {
+  const competitors = [
+    { name: "Testimonial.to", price: "$50/mo", lifetime: false, free: "Limited", embed: true },
+    { name: "Senja.io", price: "$39/mo", lifetime: false, free: "7 day trial", embed: true },
+    { name: "TrustPulse", price: "$5/mo", lifetime: false, free: "No", embed: true },
+    { name: "ShoutBase", price: "$49", lifetime: true, free: "5 testimonials", embed: true },
+  ];
+
+  return (
+    <section className="py-24 px-6">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-700 px-4 py-1.5 rounded-full text-sm font-medium mb-4">
+            Compare
+          </div>
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+            Why pay monthly when you can{" "}
+            <span className="text-emerald-600">pay once?</span>
+          </h2>
+          <p className="text-lg text-gray-500">
+            Other tools charge $39-$50/month. ShoutBase is $49 total. Forever.
+          </p>
+        </div>
+        <div className="overflow-hidden rounded-2xl border border-gray-200 shadow-lg">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="bg-gray-50 border-b border-gray-200">
+                <th className="text-left px-6 py-4 font-semibold text-gray-900">Tool</th>
+                <th className="text-center px-4 py-4 font-semibold text-gray-900">Price</th>
+                <th className="text-center px-4 py-4 font-semibold text-gray-900">Lifetime Deal</th>
+                <th className="text-center px-4 py-4 font-semibold text-gray-900">Free Tier</th>
+              </tr>
+            </thead>
+            <tbody>
+              {competitors.map((c, i) => (
+                <tr
+                  key={i}
+                  className={`border-b border-gray-100 ${
+                    c.name === "ShoutBase"
+                      ? "bg-violet-50 font-medium"
+                      : "bg-white"
+                  }`}
+                >
+                  <td className="px-6 py-4">
+                    {c.name === "ShoutBase" ? (
+                      <span className="flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-violet-600" />
+                        <span className="font-bold text-violet-700">{c.name}</span>
+                      </span>
+                    ) : (
+                      <span className="text-gray-600">{c.name}</span>
+                    )}
+                  </td>
+                  <td className="text-center px-4 py-4">
+                    {c.name === "ShoutBase" ? (
+                      <span className="text-violet-700 font-bold">{c.price}</span>
+                    ) : (
+                      <span className="text-gray-600">{c.price}</span>
+                    )}
+                  </td>
+                  <td className="text-center px-4 py-4">
+                    {c.lifetime ? (
+                      <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-100 text-emerald-600">
+                        <Check className="w-4 h-4" />
+                      </span>
+                    ) : (
+                      <span className="text-gray-400">—</span>
+                    )}
+                  </td>
+                  <td className="text-center px-4 py-4">
+                    <span className={c.name === "ShoutBase" ? "text-violet-700 font-bold" : "text-gray-600"}>
+                      {c.free}
+                    </span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="text-center text-sm text-gray-400 mt-4">
+          Prices as of April 2026. ShoutBase saves you $540+/year vs monthly tools.
+        </p>
+      </div>
+    </section>
+  );
+}
+
+function FAQ() {
+  const faqs = [
+    {
+      q: "How does the free plan work?",
+      a: "You get 1 collection page and up to 5 testimonials completely free, forever. No credit card required. Great for testing ShoutBase before upgrading.",
+    },
+    {
+      q: "What does 'lifetime deal' mean?",
+      a: "Pay $49 once and use ShoutBase Pro forever. No monthly fees, no annual renewals. You get all future updates included.",
+    },
+    {
+      q: "How do I embed testimonials on my website?",
+      a: "Just copy one line of HTML code from your dashboard and paste it into your website. It works with any platform — WordPress, Shopify, Webflow, Wix, custom sites, and more.",
+    },
+    {
+      q: "Can my clients submit testimonials easily?",
+      a: "Yes! You get a branded collection page with a simple form. Share the link with your clients and they can submit a testimonial in about 30 seconds.",
+    },
+    {
+      q: "Do I need technical skills?",
+      a: "Not at all. Creating a collection, sharing the link, and embedding the widget are all point-and-click. If you can paste text, you can use ShoutBase.",
+    },
+    {
+      q: "Can I remove the ShoutBase branding?",
+      a: "Yes, on the Pro plan ($49 lifetime) and above. Free plan shows a small 'Powered by ShoutBase' link.",
+    },
+  ];
+
+  return (
+    <section className="py-24 px-6 bg-gray-50">
+      <div className="max-w-3xl mx-auto">
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-1.5 rounded-full text-sm font-medium mb-4">
+            FAQ
+          </div>
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+            Common questions
+          </h2>
+        </div>
+        <div className="space-y-4">
+          {faqs.map((faq, i) => (
+            <details
+              key={i}
+              className="group bg-white rounded-xl border border-gray-200 overflow-hidden"
+            >
+              <summary className="flex items-center justify-between px-6 py-4 cursor-pointer hover:bg-gray-50 transition">
+                <span className="font-semibold text-gray-900">{faq.q}</span>
+                <ArrowRight className="w-4 h-4 text-gray-400 transition-transform group-open:rotate-90 flex-shrink-0 ml-4" />
+              </summary>
+              <div className="px-6 pb-4 text-gray-600 leading-relaxed">
+                {faq.a}
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function CTA() {
   return (
     <section className="py-24 px-6">
@@ -496,6 +643,8 @@ export default function Home() {
       <Features />
       <HowItWorks />
       <Pricing />
+      <Comparison />
+      <FAQ />
       <CTA />
       <Footer />
     </>
