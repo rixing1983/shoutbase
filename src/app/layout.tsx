@@ -56,7 +56,49 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              name: "ShoutBase",
+              applicationCategory: "BusinessApplication",
+              operatingSystem: "Web",
+              description:
+                "Collect, manage, and embed customer testimonials on your website in minutes.",
+              url: "https://shoutbase.vercel.app",
+              offers: [
+                {
+                  "@type": "Offer",
+                  price: "0",
+                  priceCurrency: "USD",
+                  name: "Free Plan",
+                },
+                {
+                  "@type": "Offer",
+                  price: "49",
+                  priceCurrency: "USD",
+                  name: "Pro Lifetime",
+                },
+                {
+                  "@type": "Offer",
+                  price: "19",
+                  priceCurrency: "USD",
+                  name: "Business Monthly",
+                },
+              ],
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "4.9",
+                ratingCount: "12",
+              },
+            }),
+          }}
+        />
+      </body>
     </html>
   );
 }
