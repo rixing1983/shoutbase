@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/dashboard/", "/api/"],
     },
-    sitemap: "https://shoutbase.vercel.app/sitemap.xml",
+    sitemap: "https://shoutbase-alpha.vercel.app/sitemap.xml",
   };
 }

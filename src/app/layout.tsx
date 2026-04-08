@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: "ShoutBase - Collect & Display Testimonials That Convert",
     description:
       "Stop losing sales because of missing social proof. Collect, manage, and embed customer testimonials in minutes.",
-    url: "https://shoutbase.vercel.app",
+    url: "https://shoutbase-alpha.vercel.app",
     siteName: "ShoutBase",
     type: "website",
   },
@@ -69,7 +69,7 @@ export default function RootLayout({
               operatingSystem: "Web",
               description:
                 "Collect, manage, and embed customer testimonials on your website in minutes.",
-              url: "https://shoutbase.vercel.app",
+              url: "https://shoutbase-alpha.vercel.app",
               offers: [
                 {
                   "@type": "Offer",

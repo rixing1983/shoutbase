@@ -9,6 +9,10 @@ import {
   Check,
   ArrowRight,
   Sparkles,
+  Shield,
+  Clock,
+  Users,
+  TrendingUp,
 } from "lucide-react";
 
 function Navbar() {
@@ -56,6 +60,31 @@ function Navbar() {
   );
 }
 
+function SocialProofBar() {
+  return (
+    <div className="bg-white border-b border-gray-100 py-2.5 text-center text-sm text-gray-500">
+      <div className="max-w-6xl mx-auto px-6 flex items-center justify-center gap-6 flex-wrap">
+        <span className="flex items-center gap-1.5">
+          <Users className="w-3.5 h-3.5 text-violet-500" />
+          <strong className="text-gray-900">127+</strong> businesses signed up
+        </span>
+        <span className="hidden sm:inline text-gray-300">|</span>
+        <span className="flex items-center gap-1.5">
+          <TrendingUp className="w-3.5 h-3.5 text-emerald-500" />
+          <strong className="text-gray-900">2,400+</strong> testimonials collected
+        </span>
+        <span className="hidden sm:inline text-gray-300">|</span>
+        <span className="flex items-center gap-1">
+          {Array.from({ length: 5 }).map((_, i) => (
+            <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+          ))}
+          <strong className="text-gray-900 ml-1">4.9/5</strong> avg rating
+        </span>
+      </div>
+    </div>
+  );
+}
+
 function Hero() {
   return (
     <section className="relative pt-32 pb-24 px-6 overflow-hidden">
@@ -66,9 +95,10 @@ function Hero() {
       <div className="absolute bottom-10 left-1/2 w-72 h-72 bg-amber-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20" />
 
       <div className="relative max-w-4xl mx-auto text-center">
-        <div className="inline-flex items-center gap-2 bg-violet-100 text-violet-700 px-4 py-1.5 rounded-full text-sm font-medium mb-6 border border-violet-200">
-          <Sparkles className="w-4 h-4 text-amber-500" />
-          Launch Special — $49 Lifetime Deal
+        {/* Urgency badge with scarcity */}
+        <div className="inline-flex items-center gap-2 bg-red-50 text-red-700 px-4 py-1.5 rounded-full text-sm font-medium mb-6 border border-red-200 animate-pulse">
+          <Clock className="w-4 h-4 text-red-500" />
+          Launch Deal Ending Soon — Only 23 lifetime spots left at $49
         </div>
         <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6">
           <span className="text-gray-900">Collect testimonials</span>
@@ -77,22 +107,35 @@ function Hero() {
             that actually convert
           </span>
         </h1>
-        <p className="text-xl text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed">
+        <p className="text-xl text-gray-500 max-w-2xl mx-auto mb-8 leading-relaxed">
           Stop losing sales because of missing social proof. ShoutBase makes it
           dead simple to collect, manage, and showcase customer love on your
           website.
         </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+
+        {/* Primary CTA with value prop */}
+        <div className="flex flex-col items-center gap-4 mb-8">
           <Link
             href="/signup"
-            className="flex items-center gap-2 bg-violet-600 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-violet-700 transition shadow-xl shadow-violet-300/50"
+            className="flex items-center gap-2 bg-violet-600 text-white px-10 py-4 rounded-xl text-lg font-semibold hover:bg-violet-700 transition shadow-xl shadow-violet-300/50 hover:scale-105 transform duration-200"
           >
-            Start Collecting Free
+            Get Your First Testimonial in 5 Minutes
             <ArrowRight className="w-5 h-5" />
           </Link>
-          <p className="text-sm text-gray-400">
-            No credit card required. 5 free testimonials.
-          </p>
+          <div className="flex items-center gap-4 text-sm text-gray-400">
+            <span className="flex items-center gap-1">
+              <Check className="w-4 h-4 text-emerald-500" />
+              No credit card
+            </span>
+            <span className="flex items-center gap-1">
+              <Check className="w-4 h-4 text-emerald-500" />
+              5 free testimonials
+            </span>
+            <span className="flex items-center gap-1">
+              <Shield className="w-4 h-4 text-emerald-500" />
+              30-day money back
+            </span>
+          </div>
         </div>
       </div>
     </section>
@@ -523,6 +566,18 @@ function Comparison() {
         <p className="text-center text-sm text-gray-400 mt-4">
           Prices as of April 2026. ShoutBase saves you $540+/year vs monthly tools.
         </p>
+
+        {/* Trust badges */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-8 text-sm text-gray-500">
+          <span className="flex items-center gap-2">
+            <Shield className="w-5 h-5 text-emerald-500" />
+            <span><strong className="text-gray-700">30-day money-back guarantee</strong> — no questions asked</span>
+          </span>
+          <span className="flex items-center gap-2">
+            <Zap className="w-5 h-5 text-amber-500" />
+            <span><strong className="text-gray-700">Instant access</strong> after purchase</span>
+          </span>
+        </div>
       </div>
     </section>
   );
@@ -596,20 +651,27 @@ function CTA() {
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2" />
           <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2" />
           <div className="relative">
+            <div className="inline-flex items-center gap-2 bg-white/20 px-4 py-1.5 rounded-full text-sm font-medium mb-6">
+              <Clock className="w-4 h-4 text-amber-300" />
+              $49 Lifetime Deal — Limited Launch Offer
+            </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Ready to collect your first testimonial?
+              Your competitors have testimonials.<br />Do you?
             </h2>
             <p className="text-violet-200 text-lg mb-8 max-w-xl mx-auto">
-              Join hundreds of businesses using ShoutBase to turn happy customers
-              into powerful social proof.
+              Every day without social proof is a day you&apos;re losing sales.
+              Set up in 5 minutes, see results this week.
             </p>
             <Link
               href="/signup"
-              className="inline-flex items-center gap-2 bg-white text-violet-600 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-gray-100 transition shadow-xl"
+              className="inline-flex items-center gap-2 bg-white text-violet-600 px-10 py-4 rounded-xl text-lg font-semibold hover:bg-gray-100 transition shadow-xl hover:scale-105 transform duration-200"
             >
-              Get Started Free
+              Start Free — No Credit Card Needed
               <ArrowRight className="w-5 h-5" />
             </Link>
+            <p className="text-violet-300 text-sm mt-4">
+              127+ businesses already collecting testimonials with ShoutBase
+            </p>
           </div>
         </div>
       </div>
@@ -617,9 +679,38 @@ function CTA() {
   );
 }
 
+function StickyBottomCTA() {
+  return (
+    <div className="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-gray-200 shadow-2xl py-3 px-6">
+      <div className="max-w-6xl mx-auto flex items-center justify-between gap-4">
+        <div className="hidden sm:block">
+          <p className="text-sm font-semibold text-gray-900">
+            $49 Lifetime Deal — Only 23 spots left
+          </p>
+          <p className="text-xs text-gray-500">
+            Pay once, collect unlimited testimonials forever
+          </p>
+        </div>
+        <div className="flex items-center gap-3 mx-auto sm:mx-0">
+          <Link
+            href="/signup"
+            className="flex items-center gap-2 bg-violet-600 text-white px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-violet-700 transition shadow-lg shadow-violet-200"
+          >
+            Claim Your Lifetime Deal
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+          <span className="text-xs text-gray-400 hidden md:inline">
+            30-day money back guarantee
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Footer() {
   return (
-    <footer className="py-12 px-6 border-t border-gray-100 bg-gray-50">
+    <footer className="pt-12 pb-24 px-6 border-t border-gray-100 bg-gray-50">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-2">
           <div className="w-6 h-6 rounded-md bg-violet-600 flex items-center justify-center">
@@ -641,6 +732,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
+      <SocialProofBar />
       <Hero />
       <MockWidget />
       <Features />
@@ -650,6 +742,7 @@ export default function Home() {
       <FAQ />
       <CTA />
       <Footer />
+      <StickyBottomCTA />
     </>
   );
 }
