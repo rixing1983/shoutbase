@@ -72,7 +72,7 @@ Collecting testimonials is only half the battle. You also need to display them e
 
 The fastest way to start collecting testimonials is to use a purpose-built tool. ShoutBase offers a free tier with 5 testimonials and 1 collection page — enough to test the workflow and see results.
 
-[Get started with ShoutBase for free →](https://shoutbase.vercel.app/signup)
+[Get started with ShoutBase for free →](https://shoutbase-alpha.vercel.app/signup)
     `.trim(),
   },
   {
@@ -177,7 +177,7 @@ Combines review collection with display widgets and a review aggregation feature
 
 If you want the best value, ShoutBase's $49 lifetime deal is hard to beat. You get testimonial collection AND display for less than one month of most competitors. If you need video testimonials specifically, Testimonial.to is the leader. For social proof popups, TrustPulse is affordable.
 
-[Try ShoutBase free →](https://shoutbase.vercel.app/signup)
+[Try ShoutBase free →](https://shoutbase-alpha.vercel.app/signup)
     `.trim(),
   },
   {
@@ -245,7 +245,7 @@ Most businesses see results within the first week of adding testimonials to thei
 
 You don't need to invest upfront to start collecting social proof. Tools like ShoutBase offer a free plan that lets you collect up to 5 testimonials and embed them on your website — enough to see a real impact on conversions.
 
-[Start collecting social proof for free →](https://shoutbase.vercel.app/signup)
+[Start collecting social proof for free →](https://shoutbase-alpha.vercel.app/signup)
     `.trim(),
   },
 ];

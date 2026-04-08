@@ -25,7 +25,7 @@ export async function generateMetadata({
       description: post.description,
       type: "article",
       publishedTime: post.date,
-      url: `https://shoutbase.vercel.app/blog/${post.slug}`,
+      url: `https://shoutbase-alpha.vercel.app/blog/${post.slug}`,
     },
   };
 }
